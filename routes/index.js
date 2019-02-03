@@ -12,9 +12,9 @@ router.get('/welcome', function(req, res, next) {
 });
 
 /* GET example page. */
-// router.get('example', function(req, res, next) {
-  // res.render('example', { title: 'Example pug' });
-// });
+router.get('/example', function(req, res, next) {
+  res.render('example', { title: 'Example pug' });
+});
 
 /* GET home page. */
 // router.get('menu', function(req, res, next) {
