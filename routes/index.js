@@ -6,6 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('welcome', { title: 'Palm Court Pavilion' });
 });
 
+/* GET home page. */
+router.get('/welcome', function(req, res, next) {
+  res.render('welcome', { title: 'Palm Court Pavilion' });
+});
+
 /* GET example page. */
 // router.get('example', function(req, res, next) {
   // res.render('example', { title: 'Example pug' });
