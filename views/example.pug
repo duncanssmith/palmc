@@ -1,12 +1,34 @@
-extends layout
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Test
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
+  body
+    .container
+      fieldset
+        form(action='/', method='post')
+          input.ghost-input(name='city', type='text', placeholder='Enter a City', required='')
+          input.ghost-button(type='submit', value='Get Weather')
+        if weather
+          p= weather
+        if error
+          p= error
 
-block content
-  h1= title
-  p Welcome to #{title}
-  p Image #{imagePath}
 
-  h1 Jade - node template engine
-  #container
+
+
+//- extends layout
+
+
+//- block content
+  //- h1= title
+  //- p Welcome to #{title}
+  //- p Image #{imagePath}
+  block welcome
+    h1 Jade - node template engine
+  //- #container
     - if (youAreUsingJade)
       You are amazing
     - else
@@ -14,7 +36,7 @@ block content
 
    .image-block
      h3 Esperanza Spalding
-     img.className#IdName(src="#{imagePath}")
+    //-  img.className#IdName(src="#{imagePath}")
 
      img.className#IdName(src="/images/esperanza_spalding.jpg", width="200px", height="200px")
      img.className#IdName0(src="public/images/esperanza_spalding.jpg")
@@ -23,3 +45,12 @@ block content
      img.className#IdName3(src="../../public/images/esperanza_spalding.jpg")
      img.className#IdName3(src="/../../public/images/esperanza_spalding.jpg")
  
+  //- .container
+    fieldset
+      form(action='/', method='post')
+        input.ghost-input(name='city', type='text', placeholder='Enter a City', required='')
+        input.ghost-button(type='submit', value='Get Weather')
+      if weather
+        p= weather
+      if error
+        p= error

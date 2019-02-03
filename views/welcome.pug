@@ -2,33 +2,39 @@ extends layout
 
 block content
 
-  h1 welcome
+  a.className#idName(href="example") example &nbsp;
+  br
+  br
+  
 
-  p some text
+  h1 Palm Court Pavilion
 
-  block menu
+  include nav1
 
-    h2 menu
+  block welcome
+    h1 welcome
+    p some text
+
+  block menus
+    h2#menus menu
 
   block views
-
     h2 views
 
   block functions
-
     h2 functions
 
   block about
-
     h2 about us
 
   block contact
-
     h2 contact us
 
+
+  block menu
+    h2#menu menu
 
 block footer
 
   h2 footer
-
   p some footer stuff
