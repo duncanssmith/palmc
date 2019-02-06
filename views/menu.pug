@@ -2,59 +2,64 @@ extends layout
 
 block content
   include nav
-  h1 Menu 
 
-  section#section-menu(class="section photo")
-    div(class="row top-row")
+  h1 #{title}
+
+  p.well You can read our menus here
+
+  ul
+    each val, index in menus
+      li
+        a(href= index+'.'+val) #{val}
+
+  #menu(class="section photo")
+    .row(class="top-row")
       div(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
-        h1(class="title") Menu
-        div(class="row middle-row")
+        .row(class="middle-row")
           div(class="col-md-8 col-md-offset-0")
-            div#carousel-menu(class="carousel slide" data-ride="carousel")
-              ol(class="carousel-indicators")
-                li(data-target="#carousel-menu" data-slide-to="0" class="active")
-                li(data-target="#carousel-menu" data-slide-to="1")
-                li(data-target="#carousel-menu" data-slide-to="2")
-                li(data-target="#carousel-menu" data-slide-to="3")
-                li(data-target="#carousel-menu" data-slide-to="4")
-                li(data-target="#carousel-menu" data-slide-to="5")
+            #carousel-menu(class="carousel slide" data-ride="carousel")
+              ol.carousel-indicators
+                each val, index in menus
+                  if index == 0
+                    li.active(data-target="#carousel-menu" data-slide-to=index)
+                  else
+                    li(data-target="#carousel-menu" data-slide-to=index)
+              .carousel-inner
+                //- for menu in menus
+                  .item
+                    img(src="'#{imagePath}'+'/'+'#{menu}'", class="active")
+                div.item(class="active")
+                  img(src="img/Menu/2018/11/breakfast.png")
+                div.item
+                  img(src="img/Menu/2018/11/brunch.png")
+                div.item
+                  img(src="img/Menu/2018/11/lunch.png")
+                div.item
+                  img(src="img/Menu/2018/04/veganVeggie.png")
+                div.item
+                  img(src="img/Menu/2018/04/drinks.png")
+                div.item
+                  img(src="img/Menu/2018/11/sundayLunch.png")
+                div.item
+                  img(src="img/Menu/2017/05/Kids.png")
 
-              div(class="carousel-inner")
-                div(class="item active")
-                  img(src="/public/images/Menu/2018/11/Christmas.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/breakfast.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/brunch.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/lunch.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/04/veganVeggie.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/04/drinks.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/sundayLunch.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2017/05/Kids.png")
-
-                a(class="left carousel-control" href="#carousel-menu" role="button" data-slide="prev")
-                span(class="glyphicon glyphicon-chevron-left")
-                a(class="right carousel-control" href="#carousel-menu" role="button" data-slide="next")
-                span(class="glyphicon glyphicon-chevron-right")
+                a.left(class="carousel-control" href="#carousel-menu" role="button" data-slide="prev")
+                  span.glyphicon(class="glyphicon-chevron-left")
+                a.right(class="carousel-control" href="#carousel-menu" role="button" data-slide="next")
+                  span(class="glyphicon glyphicon-chevron-right")
                 div(class="col-md-4")
-                  p(class="download-box")
-                    a(href="/media/images/Menu/pdf/2018/11/Christmas.pdf" target="_blank" title="Download the Main Menu")
-                    i(class="fa fa-download") Christmas 2018 Menu and Booking Form
-                    i(class="fa fa-download") Breakfast
-                    a(href="/media/images/Menu/pdf/2018/11/brunch.pdf" target="_blank" title="Download the Brunch Menu")
-                    i(class="fa fa-download") Brunch
-                    a(href="/media/images/Menu/pdf/2018/11/lunch.pdf" target="_blank" title="Download the Brunch Menu")
-                    i(class="fa fa-download") Lunch
-                    a(href="/media/images/Menu/pdf/2018/04/veganVeggie.pdf" target="_blank" title="Download the Vegetarian/Vegan Menu")
-                    i(class="fa fa-download") Vegetarian/Vegan
-                    a(href="/media/images/Menu/pdf/2018/04/drinks.pdf" target="_blank" title="Download the Drinks Menu")
-                    i(class="fa fa-download") Drinks/Wine
-                    a(href="/media/images/Menu/pdf/2018/11/SundayLunch.pdf" target="_blank" title="Download the Sunday Lunch menu")
-                    i(class="fa fa-download") Sunday lunch
-                    a(href="/media/images/Menu/pdf/2017/05/Kids.pdf" target="_blank" title="Download the kids menu")
-                    i(class="fa fa-download") Kids
+                  p.download-box
+                    a(href="img/Menu/pdf/2018/11/breakfast.pdf" target="_blank" title="Download the Breakfast Menu")
+                      i.fa(class="fa-download") Breakfast
+                    a(href="img/Menu/pdf/2018/11/brunch.pdf" target="_blank" title="Download the Brunch Menu")
+                      i.fa(class="fa-download") Brunch
+                    a(href="img/Menu/pdf/2018/11/lunch.pdf" target="_blank" title="Download the Lunch Menu")
+                      i.fa(class="fa-download") Lunch
+                    a(href="img/Menu/pdf/2018/04/veganVeggie.pdf" target="_blank" title="Download the Vegetarian/Vegan Menu")
+                      i.fa(class="fa-download") Vegetarian/Vegan
+                    a(href="img/Menu/pdf/2018/04/drinks.pdf" target="_blank" title="Download the Drinks Menu")
+                      i.fa(class="fa-download") Drinks/Wine
+                    a(href="img/Menu/pdf/2018/11/SundayLunch.pdf" target="_blank" title="Download the Sunday Lunch menu")
+                      i.fa(class="fa-download") Sunday lunch
+                    a(href="img/Menu/pdf/2017/05/Kids.pdf" target="_blank" title="Download the kids menu")
+                      i.fa(class="fa-download") Kids
