@@ -14,6 +14,12 @@ router.get('/welcome', function(req, res, next) {
 /* GET example page. */
 router.get('/menu', function(req, res, next) {
   res.render('menu', { title: 'Menu', menus: {0: 'Breakfast', 1: 'Brunch', 2: 'Lunch', 3: 'Veg', 4: 'Drinks', 5: 'Sunday', 6: 'Kids'} });
+  // res.render('menu', { title: 'Menu', menus: { breakfast: 'Breakfast', brunch: 'Brunch', lunch: 'Lunch' } });
+});
+
+/* GET example page. */
+router.get('/open', function(req, res, next) {
+  res.render('open', { title: 'Open' });
 });
 
 /* GET example page. */
@@ -35,11 +41,5 @@ router.get('/functions', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
-
-/* GET home page. */
-// router.get('menu', function(req, res, next) {
-  // res.render('menu', { title: 'Menu' });
-// });
-
 
 module.exports = router;
