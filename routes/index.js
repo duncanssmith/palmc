@@ -13,7 +13,7 @@ router.get('/welcome', function(req, res, next) {
 
 /* GET example page. */
 router.get('/menu', function(req, res, next) {
-  res.render('menu', { title: 'Menu' });
+  res.render('menu', { title: 'Menu', menus: { breakfast: 'Breakfast', brunch: 'Brunch', lunch: 'Lunch' } });
 });
 
 /* GET example page. */
