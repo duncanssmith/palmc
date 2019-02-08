@@ -17,6 +17,11 @@ router.get('/menu', function(req, res, next) {
 });
 
 /* GET example page. */
+router.get('/open', function(req, res, next) {
+  res.render('open', { title: 'Open' });
+});
+
+/* GET example page. */
 router.get('/view', function(req, res, next) {
   res.render('view', { title: 'View' });
 });
@@ -35,11 +40,5 @@ router.get('/functions', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
-
-/* GET home page. */
-// router.get('menu', function(req, res, next) {
-  // res.render('menu', { title: 'Menu' });
-// });
-
 
 module.exports = router;
