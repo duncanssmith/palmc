@@ -3,38 +3,45 @@ extends _layout
 block content
   include _nav
 
-  #section-menu(class="section photo")
-    .row.top-row
-      .col-lg-10.col-md-8.col-sm-6.col-xs-3
-        h1.title Menu
-        .row.middle-row
-          .col-md-8.col-md-offset-0
-            #carousel-menu.carousel.slide(data-ride="carousel")
-              ol.carousel-indicators
-                li.active(data-target="#carousel-menu" data-slide-to="0")
-                li(data-target="#carousel-menu" data-slide-to="1")
-                li(data-target="#carousel-menu" data-slide-to="2")
-                li(data-target="#carousel-menu" data-slide-to="3")
-                li(data-target="#carousel-menu" data-slide-to="4")
-                li(data-target="#carousel-menu" data-slide-to="5")
+  h1 #{title}
 
-              div(class="carousel-inner")
-                div(class="item active")
-                  img(src="/public/images/Menu/2018/11/Christmas.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/breakfast.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/brunch.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/lunch.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/04/veganVeggie.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/04/drinks.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2018/11/sundayLunch.png")
-                div(class="item")
-                  img(src="/public/images/Menu/2017/05/Kids.png")
+  p.well You can read our menus here
+
+  ul
+    each val, index in menus
+      li
+        a(href= val) #{val}
+
+  #menu(class="section photo")
+    .row(class="top-row")
+      div(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
+        .row(class="middle-row")
+          div(class="col-md-8 col-md-offset-0")
+            #carousel-menu(class="carousel slide" data-ride="carousel")
+              ol.carousel-indicators
+                each val, index in menus
+                  if index == 0
+                    li.active(data-target="#carousel-menu" data-slide-to=index)
+                  else
+                    li(data-target="#carousel-menu" data-slide-to=index)
+              .carousel-inner
+                //- for menu in menus
+                  .item
+                    img(src="'#{imagePath}'+'/'+'#{menu}'", class="active")
+                div.item.active
+                  img(src="img/Menu/2018/11/breakfast.png")
+                div.item
+                  img(src="img/Menu/2018/11/brunch.png")
+                div.item
+                  img(src="img/Menu/2018/11/lunch.png")
+                div.item
+                  img(src="img/Menu/2018/04/veganVeggie.png")
+                div.item
+                  img(src="img/Menu/2018/04/drinks.png")
+                div.item
+                  img(src="img/Menu/2018/11/sundayLunch.png")
+                div.item
+                  img(src="img/Menu/2017/05/Kids.png")
 
                 a(class="left carousel-control" href="#carousel-menu" role="button" data-slide="prev")
                 span(class="glyphicon glyphicon-chevron-left")
