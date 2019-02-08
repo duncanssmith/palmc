@@ -1,16 +1,12 @@
-extends layout
+extends _layout
 
 block content
-    include nav
-
-    - var xtitle = 'Welcome xxx'
-
-    h1 Welcome #{xtitle}
-    div.row#rowOne
-      div#one(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
-        h1(class="title" Palm Court Pavilion) Palm Court Pavilion
-    div.row#rowTwo
-      div#two(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
+    include _nav
+    h1 #{title}
+    .row#rowOne
+      #one(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
+    .row#rowTwo
+      #two(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
         p(class="float-text-main") Palm Court Pavilion is a stylish Café-Bistro in the beautifully renovated bowling-green pavilion in Worthing's delightful Beach House Park.
         p(class="float-text-main") We serve delicious homemade food in a tranquil setting a few minutes walk from the town centre and the seafront.
         p(class="float-text-main") We also offer excellent facilities for functions and events.
