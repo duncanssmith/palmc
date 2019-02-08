@@ -41,10 +41,4 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
 
-/* GET home page. */
-// router.get('menu', function(req, res, next) {
-  // res.render('menu', { title: 'Menu' });
-// });
-
-
 module.exports = router;

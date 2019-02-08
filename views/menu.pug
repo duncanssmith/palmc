@@ -3,15 +3,15 @@ extends _layout
 block content
   include _nav
 
-  section#section-menu(class="section photo")
-    div(class="row top-row")
-      div(class="col-lg-10 col-md-8 col-sm-6 col-xs-3")
-        h1(class="title") Menu
-        div(class="row middle-row")
-          div(class="col-md-8 col-md-offset-0")
-            div#carousel-menu(class="carousel slide" data-ride="carousel")
-              ol(class="carousel-indicators")
-                li(data-target="#carousel-menu" data-slide-to="0" class="active")
+  #section-menu(class="section photo")
+    .row.top-row
+      .col-lg-10.col-md-8.col-sm-6.col-xs-3
+        h1.title Menu
+        .row.middle-row
+          .col-md-8.col-md-offset-0
+            #carousel-menu.carousel.slide(data-ride="carousel")
+              ol.carousel-indicators
+                li.active(data-target="#carousel-menu" data-slide-to="0")
                 li(data-target="#carousel-menu" data-slide-to="1")
                 li(data-target="#carousel-menu" data-slide-to="2")
                 li(data-target="#carousel-menu" data-slide-to="3")
