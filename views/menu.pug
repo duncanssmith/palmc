@@ -1,72 +1,16 @@
 extends _layout
 
 block content
+  - var menuImages = ["img/Menu/2018/11/breakfast.png", "img/Menu/2018/11/brunch.png", "img/Menu/2018/11/lunch.png", "img/Menu/2018/04/veganVeggie.png", "img/Menu/2018/04/drinks.png", "img/Menu/2018/11/sundayLunch.png", "img/Menu/2017/05/Kids.png" ]
   include _nav
 
   h1 #{title}
 
-  p.well You can read our menus here
+  p.well Click to view menus 
 
-  ul
+  #menus
     each val, index in menus
-      li
-        a(href= index+'.'+val) #{val}
-
-
-  ul
-    each val, index in menus
-      li.menus val
-        a(href= val) #{val}
-
-  #menu.section.photo
-    .row.top-row
-      div.col-lg-10.col-md-8.col-sm-6.col-xs-3
-        .row.middle-row
-          .col-md-8.col-md-offset-0
-            #carousel-menu.carousel.slide(data-ride="carousel")
-              ol.carousel-indicators
-                each val, index in menus
-                  if index == 0
-                    li.active(data-target="#carousel-menu" data-slide-to=index)
-                  else
-                    li(data-target="#carousel-menu" data-slide-to=index)
-
-              .carousel-inner
-                //- for menu in menus
-                  .item
-                    img(src="'#{imagePath}'+'/'+'#{menu}'", class="active")
-                div.item.active
-                  img(src="img/Menu/2018/11/breakfast.png")
-                div.item
-                  img(src="img/Menu/2018/11/brunch.png")
-                div.item
-                  img(src="img/Menu/2018/11/lunch.png")
-                div.item
-                  img(src="img/Menu/2018/04/veganVeggie.png")
-                div.item
-                  img(src="img/Menu/2018/04/drinks.png")
-                div.item
-                  img(src="img/Menu/2018/11/sundayLunch.png")
-                div.item
-                  img(src="img/Menu/2017/05/Kids.png")
-
-                a.left.carousel-control(href="#carousel-menu" role="button" data-slide="prev")
-                span.glyphicon.glyphicon-chevron-left
-                a.right.carousel-control(href="#carousel-menu" role="button" data-slide="next")
-                span.glyphicon.glyphicon-chevron-right
-                .col-md-4
-                  p.download-box
-                    a(href="img/Menu/pdf/2018/11/breakfast.pdf" target="_blank" title="Download the Breakfast Menu")
-                      i.fa.fa-download Breakfast
-                    a(href="img/Menu/pdf/2018/11/brunch.pdf" target="_blank" title="Download the Brunch Menu")
-                      i.fa.fa-download Brunch
-                    a(href="img/Menu/pdf/2018/11/lunch.pdf" target="_blank" title="Download the Lunch Menu")
-                      i.fa.fa-download Lunch
-                    a(href="img/Menu/pdf/2018/04/veganVeggie.pdf" target="_blank" title="Download the Vegetarian/Vegan Menu")
-                      i.fa.fa-download Vegetarian/Vegan
-                    a(href="img/Menu/pdf/2018/04/drinks.pdf" target="_blank" title="Download the Drinks Menu")
-                      i.fa.fa-download Drinks/Wine
-                    a(href="img/Menu/pdf/2018/11/SundayLunch.pdf" target="_blank" title="Download the Sunday Lunch menu")
-                      i.fa.fa-download Sunday lunch
-                    a(href="img/Menu/pdf/2017/05/Kids.pdf" target="_blank" title="Download the kids menu")
-                      i.fa.fa-download Kids
+      h5(id= val+index data-toggle="collapse" href= '#'+val)
+        a(class= '#'+val) #{val}
+      .menu.collapse(id= val)
+        img(src= menuImages[index] width="400")
