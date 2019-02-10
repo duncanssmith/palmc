@@ -1,15 +1,15 @@
 extends _layout
 
 block content
-  include _nav
 
-  h1 #{title}
+  #section-menu.jumbotron
+    include _nav
 
-  p.well Click to view menus 
+    h1 #{title}
 
-  #menus
-    each val, index in menus
-      h5(id= val.name+index data-toggle="collapse" href= '#'+val.name)
-        a(class= '#'+val.name) #{val.displayName}
-      .menu.collapse(id= val.name)
-        img(src= val.image width="400")
+    #menus
+      each val, index in menus
+        h5(id= val.name+index data-toggle="collapse" href= '#'+val.name)
+          a(class= '#'+val.name) #{val.displayName}
+        .menu.collapse(id= val.name)
+          img(src= val.image width="400")
