@@ -1,6 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+var menus = {
+    0: {name: 'breakfast', displayName: 'Breakfast', image: 'img/Menu/2018/11/breakfast.png' }, 
+    1: {name: 'brunch', displayName: 'Brunch', image: 'img/Menu/2018/11/brunch.png' },
+    2: {name: 'lunch', displayName: 'Lunch', image: 'img/Menu/2018/11/lunch.png' }, 
+    3: {name: 'veg', displayName: 'Vegetarian/Vegan', image: 'img/Menu/2018/04/veganVeggie.png' },
+    4: {name: 'drinks', displayName: 'Drinks/Wine', image: 'img/Menu/2018/04/drinks.png' },
+    5: {name: 'sunday', displayName: 'Sunday lunch', image: 'img/Menu/2018/11/sundayLunch.png' },
+    6: {name: 'kids', displayName: 'Kids', image: 'img/Menu/2017/05/Kids.png' }};
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('welcome', { title: 'Palm Court Pavilion' });
@@ -13,8 +22,7 @@ router.get('/welcome', function(req, res, next) {
 
 /* GET example page. */
 router.get('/menu', function(req, res, next) {
-  res.render('menu', { title: 'Menu', menus: {0: 'Breakfast', 1: 'Brunch', 2: 'Lunch', 3: 'Veg', 4: 'Drinks', 5: 'Sunday', 6: 'Kids'} });
-  // res.render('menu', { title: 'Menu', menus: { breakfast: 'Breakfast', brunch: 'Brunch', lunch: 'Lunch' } });
+  res.render('menu', { title: 'Menu', menus: menus });
 });
 
 /* GET example page. */

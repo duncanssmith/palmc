@@ -1,7 +1,6 @@
 extends _layout
 
 block content
-  - var menuImages = ["img/Menu/2018/11/breakfast.png", "img/Menu/2018/11/brunch.png", "img/Menu/2018/11/lunch.png", "img/Menu/2018/04/veganVeggie.png", "img/Menu/2018/04/drinks.png", "img/Menu/2018/11/sundayLunch.png", "img/Menu/2017/05/Kids.png" ]
   include _nav
 
   h1 #{title}
@@ -10,7 +9,7 @@ block content
 
   #menus
     each val, index in menus
-      h5(id= val+index data-toggle="collapse" href= '#'+val)
-        a(class= '#'+val) #{val}
-      .menu.collapse(id= val)
-        img(src= menuImages[index] width="400")
+      h5(id= val.name+index data-toggle="collapse" href= '#'+val.name)
+        a(class= '#'+val.name) #{val.displayName}
+      .menu.collapse(id= val.name)
+        img(src= val.image width="400")
