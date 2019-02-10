@@ -68,14 +68,17 @@ html, body {
     line-height: 100%;
     font-weight: 200;
 }
-
 .opening-times {
+    font-family:'Oswald', sans-serif;
+}
+h5.opening-times {
+    padding: 40px 30px 40px 30px;
+    font-family:'Oswald', sans-serif;
     color: rgba(255,255,255,.99);
     background-color: rgba(0, 0, 0, .35);
-    font-family: Old Standard TT;
     font-size: 1.2em;
-    line-height: 170%;
-    font-weight: 200;
+    line-height: 130%;
+    font-weight: 400;
 }
 h4.opening-times {
     padding: 60px 40px 60px 40px;
@@ -150,8 +153,17 @@ h4.opening-times {
 }
 #section-menu {
     padding-top: 40px;
-    background: #282828 url('../img/Home/gOffer1.jpg') no-repeat center center;
-    /*background: #282828;*/
+    background: #282828 url('../img/Home/gOffer2.jpg') no-repeat center center;
+    background-size: cover;
+}
+#section-book {
+    padding-top: 40px;
+    background: #282828 url('../img/Home/gCakeStand.jpg') no-repeat center center;
+    background-size: cover;
+}
+#section-open {
+    padding-top: 40px;
+    background: #282828 url('../img/Home/gCocktail.jpg') no-repeat center center;
     background-size: cover;
 }
 .menu-page-1 {
@@ -235,7 +247,7 @@ section.photo > .container > .row {
 }
 
 .welcome {
-    text-align;left;
+    text-align:left;
     width: 300px;
     height: 200px;
     position: absolute;

@@ -6,7 +6,6 @@ block content
     include _nav
 
     h1 #{title}
-
     #menus
       each val, index in menus
         h5(id= val.name+index data-toggle="collapse" href= '#'+val.name)
