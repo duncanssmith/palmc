@@ -5,23 +5,9 @@ block content
     include _nav
     h1 #{title}
 
-    .row
-      .col-lg-6.col-md-6.col-sm-8.col-xs-10
+    .container
+      .row
+        .col-8.col-sm-8.col-md-8.col-lg-8.col-xl-8
 
-        h3.opening-times.float-text Opening times
-
-        h5.opening.opening-times
-          .Mtwrfss Monday: Closed (available for private functions)
-          .holiday Bank Holidays: Open 9am to 5pm
-          .mTWRFss Tuesday to Friday: 9am to 5pm
-          .mtwrfSS   Saturday and Sunday: 8am to 5pm (last orders 4pm)
-
-        h5.opening.opening-times
-          u Please note:
-          ul
-            li We may close earlier than stated depending on the weather
-            li Please call ahead to avoid any disappointment!
-            li Evenings and private functions available by arrangement
-
-          #phone Phone: 01903 212 011
+          include _open.pug
 

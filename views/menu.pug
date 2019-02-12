@@ -5,16 +5,17 @@ block content
     include _nav
     h1 #{title}
 
-    .row
-      .col-lg-10.col-md-8.col-sm-6.col-xs-3
-        #menus
-          each val, index in menus
-            h5(id= val.name+index data-toggle="collapse" href= '#'+val.name)
-              a(href= val.pdf)
-                i.glyphicon.glyphicon-download
-              a(class='#'+val.name) #{val.displayName}
-            .menu.collapse(id= val.name)
-                img(src= val.image width="600")
+    .container-fluid
+      .row
+        .col-lg-10.col-md-8.col-sm-6.col-xs-3
+          #menus
+            each val, index in menus
+              p.well(id= val.name+index data-toggle="collapse" href= '#'+val.name)
+                a(class='#'+val.name title="view menu") #{val.displayName} &nbsp;
+                a(href= val.pdf target="_blank" title="download PDF menu")
+                  i.fa.fa-cloud-download
+              .menu.collapse(id= val.name)
+                  img(src= val.image width="300")
 
 block footer
   include _footer
