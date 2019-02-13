@@ -1,13 +1,12 @@
 extends _layout
 
 block content
+  include _nav
   #section-welcome.jumbotron
-    include _nav
     h1 #{title}
-
-    .container
+    .container-fluid
       .row
-        .col-8.col-sm-8
+        .col-6
           p.float-text-main Palm Court Pavilion is a stylish Café-Bistro in the beautifully renovated bowling-green pavilion in Worthing's delightful Beach House Park.
           p.float-text-main We serve delicious homemade food in a tranquil setting a few minutes walk from the town centre and the seafront.
           p.float-text-main We also offer excellent facilities for functions and events.
@@ -18,7 +17,7 @@ block content
             .col-6
               p.float-text Large open-air decking areas have been created so that you can enjoy the beautiful, peaceful setting.
               p.float-text The outside spaces are also available for hire for private parties and functions.
-        .col-4.col-sm-4
+        .col-6
           include _open.pug
 
 block footer

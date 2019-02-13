@@ -1,13 +1,12 @@
 extends _layout
 
 block content
+  include _nav
   #section-menu.jumbotron
-    include _nav
     h1 #{title}
-
     .container-fluid
       .row
-        .col-lg-10.col-md-8.col-sm-6.col-xs-3
+        .col-10
           #menus
             each val, index in menus
               p(id= val.name+index data-toggle="collapse" href= '#'+val.name)

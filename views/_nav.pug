@@ -1,5 +1,8 @@
 - var links = {'/': 'Welcome', '/menu': 'Menu', '/view': 'View', '/book': 'Book', '/about': 'About'}
-
-#nav
-  each val, index in links
-    a(href= index) #{val} &nbsp;
+  .card
+    .card-body
+      h2.card-title #{title}
+      h3.card-subtitle #{subtitle}
+      #nav
+        each val, index in links
+          a(href= index) #{val} &nbsp;
