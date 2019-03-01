@@ -1,20 +1,15 @@
-extends _layout
+extends structure
 
-block content
-  include _nav
-  #section-book.jumbotron
-    h1 #{title}
-    .container-fluid
-      .row
-        .col-10
-          p The upstairs function room has a balcony giving delightful views of the park and bowling greens, a perfect venue for parties, meetings and events.
-          p The outside space in the park can be used for larger scale events of up to 1000 people, ideal for weddings, dining, exhibitions, corporate launches, markets and roadshows.
+block main
+  .row
+    .col-10
+      p The upstairs function room has a balcony giving delightful views of the park and bowling greens, a perfect venue for parties, meetings and events.
+      p The outside space in the park can be used for larger scale events of up to 1000 people, ideal for weddings, dining, exhibitions, corporate launches, markets and roadshows.
 
-        .col-10
-          p Functions information
+    .col-10
+      p Functions information
 
-        .col-10
-          p Please call us on 01903 212 011 for a quote
+    .col-10
+      p Please call us on 01903 212 011 for a quote
 
 block footer
-  include _footer

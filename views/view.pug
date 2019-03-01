@@ -1,20 +1,15 @@
-extends _layout
+extends structure
 
-block content
-  include _nav
-  #section-views.jumbotron
-    h1 #{title}
-    .container-fluid
-      .row
-        .col-10
-          .fotorama(data-nav="thumbs")
-            img(src="img/Home/aMainFront-1.jpg" width="400px")
-            img(src="img/Home/aInteriorSpace-1.jpg" width="400px")
-            img(src="img/Home/aBreakfastBuffetRoom.jpg" width="400px")
-            img(src="img/Home/aBreakfastBuffetContinental.jpg" width="400px")
-            img(src="img/Home/aBreakfastBuffetBakery.jpg" width="400px")
-            img(src="img/Home/aMainFront-2.jpg" width="400px")
-            img(src="img/Home/aInteriorSpace-2.jpg" width="400px")
+block main
+  .fotorama(data-nav="thumbs")
+    img(src="img/Home/aMainFront-1.jpg" width="400px")
+    img(src="img/Home/aInteriorSpace-1.jpg" width="400px")
+    img(src="img/Home/aBreakfastBuffetRoom.jpg" width="400px")
+    img(src="img/Home/aBreakfastBuffetContinental.jpg" width="400px")
+    img(src="img/Home/aBreakfastBuffetBakery.jpg" width="400px")
+    img(src="img/Home/aMainFront-2.jpg" width="400px")
+    img(src="img/Home/aInteriorSpace-2.jpg" width="400px")
 
+block images
 block footer
   include _footer
